@@ -72,30 +72,33 @@ export class Equipo {
         }
     }
 
-    jugar(equipoContrario){
+    jugar(equipoContrario, tipo=''){
         // Como su nombre indica es una función que hace "jugar" a los equipos, el limite de goles lo he establecido en 10. 
         let tusGoles= Math.round(Math.random()*6);
         let susGoles= Math.round(Math.random()*6);
 
-        // Apunta los resultados del primer equipo
-        this.partidoJugado(tusGoles,susGoles);
+        let apuntar = (tusGoles,susGoles) => {
+            // Apunta los resultados del primer equipo
+            this.partidoJugado(tusGoles,susGoles);
 
         // Apunta los resultados del equipo contrario
-        equipoContrario.partidoJugado(susGoles,tusGoles);
+            equipoContrario.partidoJugado(susGoles,tusGoles);
+        }
+        
 
-        // Lo añadí a posteriori para poder saber quién era el ganador 
-        let quienGanador = () => {
+        // Tuve que crear este if para jugar ya que en fase de grupos si puede haber empates pero en los playoff no.
+        if (tipo==='Liga'){
             let diferencia = tusGoles-susGoles; 
             if( diferencia < 0 ) {
                 console.log(`${this.nombre} ${tusGoles} - ${susGoles} ${equipoContrario.nombre} => ${equipoContrario.nombre}`)
                 return equipoContrario}
-            else if (diferencia === 0 ) {return this.jugar(equipoContrario)}
+            else if (diferencia === 0 ) {return this.jugar(equipoContrario, 'Liga')}
             else {
                 console.log(`${this.nombre} ${tusGoles} - ${susGoles} ${equipoContrario.nombre} => ${this.nombre}`)
                 return this} }
-
-        let ganador = quienGanador();
-    return ganador
+                else { apuntar(tusGoles,susGoles);
+                    return console.log(`${this.nombre} ${tusGoles} - ${susGoles} ${equipoContrario.nombre}`)
+            }
     }
 
 };

@@ -26,7 +26,7 @@ class Liga {
         
         // Los meto en sus respectivos arrays y luego los vuelvo a ordenar por puntaciones. 
             locales.push(grupitoOrdenado[0])
-            ordeno(locales)
+            locales.sort((a,b)=>(a.grupo>b.grupo)?1 :-1)
             segundos.push(grupitoOrdenado[1])
             ordeno(segundos)
             terceros.push(grupitoOrdenado[2])
@@ -98,7 +98,7 @@ class Liga {
             if (participantes.length===4){
                 let listaControl = [...participantes]
                 for (let index = 0; index < participantes.length/2; index++) {
-                    lista.push(participantes[index].jugar(participantes[(index+(participantes.length/2))]));
+                    lista.push(participantes[index].jugar(participantes[(index+(participantes.length/2))], 'Liga'));
                 }
                 let tercerCuarto=listaControl.filter(el => !lista.includes(el))
                 
@@ -111,7 +111,7 @@ class Liga {
 
                 // Se juega las playoff. Si solo quedan dos participantes se muestra al ganador de una forma especial      
             } else if (participantes.length===2) 
-                { let ganador=(participantes[0].jugar(participantes[1])); 
+                { let ganador=(participantes[0].jugar(participantes[1], 'Liga')); 
                 console.log(`
 ==========================================
 ¡${ganador.nombre} campeon de la EURO!
@@ -119,7 +119,7 @@ class Liga {
                 // Se juega las playoff cogiendo el primer y octavo (ya que se juntaron los dos arrays)
             else {
                 for (let index = 0; index < participantes.length/2; index++) {
-                    lista.push(participantes[index].jugar(participantes[(index+(participantes.length/2))]));
+                    lista.push(participantes[index].jugar(participantes[(index+(participantes.length/2))], 'Liga'));
                     }
                 }
 
