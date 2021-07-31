@@ -1,4 +1,5 @@
 import {grupitos} from './classGrupo.js'
+import {ordeno} from './funciones.js'   
 
 class Liga {
     constructor (nombre, grupitos) {
@@ -21,15 +22,15 @@ class Liga {
         // Clasifico los equipos por los locales, segundos y terceros clasificados
         for (let i= 0; i < this.grupitos.length; i++) {
             const grup = this.grupitos[i].equipos;
-            let grupitoOrdenado= this.ordeno(grup)
+            let grupitoOrdenado= ordeno(grup)
         
         // Los meto en sus respectivos arrays y luego los vuelvo a ordenar por puntaciones. 
             locales.push(grupitoOrdenado[0])
-            this.ordeno(locales)
+            ordeno(locales)
             segundos.push(grupitoOrdenado[1])
-            this.ordeno(segundos)
+            ordeno(segundos)
             terceros.push(grupitoOrdenado[2])
-            this.ordeno(terceros)
+            ordeno(terceros)
         }
 
         //Le doy la vuelta al array para seguir el orden establecido en la práctica. Q1-Q6
@@ -78,18 +79,6 @@ class Liga {
         // lo añado a la liga
         this.addparticipantes(participantes)
 
-    }
-    // este método ordena según las especificaciones del ejercicio
-    ordeno (grup)  {
-        // primero quién tiene más puntos
-        let g=grup.sort((a,b)=>(a.puntos_totales < b.puntos_totales) 
-                            ? 1 : (a.puntos_totales === b.puntos_totales) 
-                                // Si tienen los mismos se mira quién tiene más diferentcia de goles
-                                ?((a.diferenciaT<b.diferenciaT) 
-                                    ?1 :(a.diferenciaT === b.diferenciaT)
-                                        // Si tienen los mismos se ordena por orden alfabético
-                                        ?((a.nombre>b.nombre)?1 :-1 ) :-1):-1) 
-        return g
     }
 
     playoff () {

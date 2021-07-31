@@ -1,4 +1,5 @@
 import {equiposFutbol} from './classEquipo.js'
+import {ordeno} from './funciones.js'
 
 // Contructor de Grupo
 class Grupo {
@@ -21,6 +22,7 @@ Grupo ${this.nombre} - Jornada ${jornada}
                 this.equipos[1].jugar(this.equipos[2]);
 
                 //Mostrar por tantalla la tabla de puntuaciones de ese Grupo. Jornada 1
+                ordeno(this.equipos)
                 console.table(this.equipos, ['nombre','puntos_totales', 'goles_marcados', 'goles_recibidos', 'diferencia'])
                 break;
             case 2:
@@ -28,6 +30,7 @@ Grupo ${this.nombre} - Jornada ${jornada}
                 this.equipos[0].jugar(this.equipos[1]);
 
                 //Mostrar por tantalla la tabla de puntuaciones de ese Grupo. Jornada 2
+                ordeno(this.equipos)
                 console.table(this.equipos, ['nombre','puntos_totales', 'goles_marcados', 'goles_recibidos', 'diferencia'])
                 break;
             case 3:
@@ -35,6 +38,7 @@ Grupo ${this.nombre} - Jornada ${jornada}
                 this.equipos[2].jugar(this.equipos[0]);
 
                 //Mostrar por tantalla la tabla de puntuaciones de ese Grupo. Jornada 3
+                ordeno(this.equipos)
                 console.table(this.equipos, ['nombre','puntos_totales', 'goles_marcados', 'goles_recibidos', 'diferencia'])
                 break;
         }
@@ -75,6 +79,8 @@ Jornada 3:
         this.equipos[2].addGrupo(letra)
         this.equipos[3].addGrupo(letra)
     }
+
+
     
 }
 

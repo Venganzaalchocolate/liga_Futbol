@@ -1,13 +1,12 @@
 import {equipos} from './equipos.js'
 
 // Constructor de equipo
-class Equipo {
+export class Equipo {
     constructor (nombre) {
         this.nombre=nombre;
         this.golesM=0;
         this.golesR=0;
         this.puntos_totales=0;
-        this.diferenciaT=0; 
 
         // No me gusta esto, no creo que deba estar aquí pero no se me ocurria otra forma para que se mostrará en pantalla con un console.table()
         this.goles_marcados=0;
