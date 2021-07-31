@@ -75,8 +75,8 @@ class Equipo {
 
     jugar(equipoContrario){
         // Como su nombre indica es una función que hace "jugar" a los equipos, el limite de goles lo he establecido en 10. 
-        let tusGoles= Math.round(Math.random()*10);
-        let susGoles= Math.round(Math.random()*10);
+        let tusGoles= Math.round(Math.random()*6);
+        let susGoles= Math.round(Math.random()*6);
 
         // Apunta los resultados del primer equipo
         this.partidoJugado(tusGoles,susGoles);

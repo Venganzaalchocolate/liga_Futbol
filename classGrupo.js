@@ -64,7 +64,9 @@ Jornada 2:
 
 Jornada 3:
 - ${this.equipos[1].nombre} vs ${this.equipos[3].nombre}
-- ${this.equipos[2].nombre} vs ${this.equipos[0].nombre}`)
+- ${this.equipos[2].nombre} vs ${this.equipos[0].nombre}
+
+`)
     }
 
     nombregrupo(letra){
@@ -93,10 +95,19 @@ const creaGrupos=(equiposFutbol) => {
 
 // función que muestra en pantalla toda la planificación de cada grupo
 const mostrarPantalla= (grupitos) => {
+    console.log(`
+===============================================
+============== GRUPOS Y EQUIPOS ===============
+===============================================`)
     // Grupos y orden de las jornadas
     for (let index = 0; index < 6; index++) {
-        grupitos[index].showplanificar();
-    }    
+        grupitos[index].showplanificar()
+        ;
+    }
+    console.log(`
+===============================================
+============== COMIENZA LA EUROCOPA ===========
+===============================================`)    
 }
 
 //función que desencadena la fase de grupos
