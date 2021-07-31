@@ -1,6 +1,6 @@
 ## Práctica de introducción a JavaScript
 
-# Simulador de Liga de Futbol
+# Simulador de Liga de Fútbol
 
 En esta práctica he desarrollado un simulador de una Liga de Fútbol, los resultados solo se mostrarán por consola.
 
@@ -21,3 +21,5 @@ La práctica constaba de dos fases. Una obligatoria (playoffs) y una opcional (g
 - A continuación muestra los resultados de los partidos en las diferentes rondas (octavos de final, cuartos de final y semifinales), indicando qué equipos se clasifican para la siguiente ronda ( esto se mostrará desde octavos de final hasta semifinales).
 - Una vez finalizadas las semifinales, se mostrará el resultado del partido del tercer y cuarto puesto ( que se juega entre equipos no clasificados para la final).
 - Tras esto, se mostrará el resultado del partido de la final, anunciando posteriormente el equipo ganador como campeón del mundo.
+
+
