@@ -1,0 +1,21 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "En esta práctica he desarrollado un simulador de una Liga de Fútbol, los resultados solo se mostrarán por consola.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Venganzaalchocolate/liga_Futbol.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Venganzaalchocolate/liga_Futbol/issues"
+  },
+  "homepage": "https://github.com/Venganzaalchocolate/liga_Futbol#readme",
+  "keywords": [],
+  "type": "module"
+}

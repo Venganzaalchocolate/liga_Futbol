@@ -81,7 +81,7 @@ export class Equipo {
             // Apunta los resultados del primer equipo
             this.partidoJugado(tusGoles,susGoles);
 
-        // Apunta los resultados del equipo contrario
+            // Apunta los resultados del equipo contrario
             equipoContrario.partidoJugado(susGoles,tusGoles);
         }
         
