@@ -85,6 +85,12 @@ class Liga {
         this.clasificar();
         this.mostrarPantalla();
         let participantes=this.participantes
+        console.log(
+`
+-----------EQUIPOS PARTICIPANTES-----------
+`)
+
+        participantes.forEach(elemento=>console.log(elemento.nombre))
         
 
         let jugarPlayoff= (participantes, nombre) =>{
@@ -107,7 +113,7 @@ class Liga {
 -----------JUGANDO TERCER Y CUARTO PUESTO-----------
 `
                 )
-                tercerCuarto[0].jugar(tercerCuarto[1]);
+                tercerCuarto[0].jugar(tercerCuarto[1], 'Liga');
 
                 // Se juega las playoff. Si solo quedan dos participantes se muestra al ganador de una forma especial      
             } else if (participantes.length===2) 
